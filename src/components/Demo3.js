@@ -1,53 +1,53 @@
-"use client";
-import React from "react";
-import { motion } from "framer-motion";
+        "use client";
+        import React from "react";
+        import { motion } from "framer-motion";
 
-const banner = {
-  animate: {
-    transition: {
-      delayChildren: 0.4,
-      staggerChildren: 0.1,
-    },
-  },
-};
+        const banner = {
+        animate: {
+            transition: {
+            delayChildren: 0.4,
+            staggerChildren: 0.1,
+            },
+        },
+        };
 
-const letterAnimation = {
-  initial: {
-    y: 400,
-    opacity: 0, // Initially hidden
-  },
-  animate: {
-    y: 0,
-    opacity: 1, // Moves up and fades in
-    transition: {
-      ease: [0.42, 0, 0.58, 1], // Fix cubic-bezier values (valid range)
-      duration: 1,
-    },
-  },
-};
+        const letterAnimation = {
+        initial: {
+            y: 400,
+            opacity: 0, // Initially hidden
+        },
+        animate: {
+            y: 0,
+            opacity: 1, // Moves up and fades in
+            transition: {
+            ease: [0.42, 0, 0.58, 1], // Fix cubic-bezier values (valid range)
+            duration: 1,
+            },
+        },
+        };
 
-const Demo3 = () => {
-  return (
-    <motion.div
-      className="banner"
-      variants={banner}
-      initial="initial"
-      animate="animate"
-    >
-      <motion.h1 className="mx-10 text-[150px]" variants={letterAnimation}>
-        Brand
-      </motion.h1>
-      <motion.h1 className="mx-10 text-[150px]" variants={letterAnimation}>
-        Experience
-      </motion.h1>
-      <motion.h1 className="mx-10 text-[150px]" variants={letterAnimation}>
-        Studio
-      </motion.h1>
-    </motion.div>
-  );
-};
+        const Demo3 = () => {
+        return (
+            <motion.div
+            className="banner"
+            variants={banner}
+            initial="initial"
+            animate="animate"
+            >
+            <motion.h1 className="mx-10 text-[150px]" variants={letterAnimation}>
+                Brand
+            </motion.h1>
+            <motion.h1 className="mx-10 text-[150px]" variants={letterAnimation}>
+                Experience
+            </motion.h1>
+            <motion.h1 className="mx-10 text-[150px]" variants={letterAnimation}>
+                Studio
+            </motion.h1>
+            </motion.div>
+        );
+        };
 
-export default Demo3;
+        export default Demo3;
 
 // "use client";
 // import React from "react";
@@ -1608,3 +1608,54 @@ export default Demo3;
 // };
 
 // export default LineDrawing;
+// 'use client'
+// import React from 'react';
+// import { motion, useScroll, useTransform } from 'framer-motion';
+
+// const ParallaxSection = () => {
+//   const { scrollY } = useScroll();
+  
+//   // Adjust the transform values to control the parallax effect
+//   const yImage = useTransform(scrollY, [0, 500], [0, -100]); // Image moves up
+//   const yText = useTransform(scrollY, [0, 500], [0, 50]); // Text moves down
+  
+//   return (
+//     <>
+//     <div style={{ height: '200vh', overflow: 'hidden' }}>
+//       <motion.div
+//         style={{
+//           position: 'fixed',
+//           top: '50%',
+//           left: '50%',
+//           x: '-50%',
+//           y: yImage,
+//           width: '100%',
+//           height: '100%',
+//           backgroundImage: 'url(nature5.jpg)', // Replace with your image URL
+//           backgroundSize: 'cover',
+//           backgroundPosition: 'center',
+//         }}
+//       />
+//       <motion.div
+//         style={{
+//           position: 'absolute',
+//           top: '50%',
+//           left: '50%',
+//           x: '-50%',
+//           y: yText,
+//           color: 'white',
+//           textAlign: 'center',
+//           zIndex: 1,
+//         }}
+//       >
+//         <h1>Parallax Effect</h1>
+//         <p>Scroll down to see the effect!</p>
+//       </motion.div>
+
+//     </div>
+//     </>
+    
+//   );
+// };
+
+// export default ParallaxSection;
