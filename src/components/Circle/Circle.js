@@ -26,7 +26,10 @@ const CircleWithArrow = () => {
   };
 
   const hoverVariants = {
-    hidden: { strokeDashoffset: 1000 },
+    hidden: { strokeDashoffset: 1000, transition: {
+      duration: 2,
+      ease: "easeInOut",
+    }, },
     visible: {
       strokeDashoffset: 0,
       transition: {
@@ -42,7 +45,7 @@ const CircleWithArrow = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 2,
+        delay: 0.5,
         duration: 0.5,
       },
     },
@@ -85,25 +88,15 @@ const CircleWithArrow = () => {
           strokeDashoffset="1000"
           variants={hoverVariants}
           initial="hidden"
-          whileHover="visible" // Triggers the hover animation
+          whileHover="visible"
+           // Triggers the hover animation
         />
-        
-        {/* Arrow Icon Animation */}
-        <motion.div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            zIndex: 1, // Ensure the arrow is on top
-          }}
-          variants={arrowVariants}
-          initial="hidden"
-          animate="visible"
-        >
-        </motion.div>
-          <FaArrowDown />
       </svg>
+      {/* <motion.div className="absolute inset-0 flex justify-center items-center"   variants={arrowVariants}
+          initial="hidden"
+          animate="visible">
+        <FaArrowDown />
+        </motion.div> */}
     </div>
   );
 };

@@ -2,8 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+/* styles.css */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: Arial, sans-serif;
+  }
+  
+  .section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #3498db;
+    background: #ecf0f1;
+    position: relative;
+    overflow: hidden; /* Prevent overflow of animated elements */
+  }
+  
+  .section:nth-child(even) {
+    background: #bdc3c7; /* Alternate background color for visual separation */
+  }
+  
